@@ -5,7 +5,6 @@ export const useCartStore = defineStore("cart", {
     cartItems: [],
   }),
   actions: {
-    // Add an item to the cart
     addToCart(item) {
       const existingItem = this.cartItems.find(
         (cartItem) => cartItem.id === item.id
@@ -13,11 +12,10 @@ export const useCartStore = defineStore("cart", {
       if (existingItem) {
         existingItem.quantity += 1;
       } else {
-        this.cartItems.push({ ...item, quantity: 1 });
+        this.cartItems.push({ ...item, quantity: 1 });``
       }
     },
     
-    // Remove an item from the cart by its ID
     removeFromCart(id) {
       this.cartItems = this.cartItems.filter((item) => item.id !== id);
     },

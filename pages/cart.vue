@@ -1,8 +1,8 @@
 <template>
-    <CartPage />
+    <cartBody />
   </template>
   
   <script setup>
-  import CartPage from "~/components/CartPage.vue";
+  import cartBody from "~/components/cartBody.vue";
   </script>
   

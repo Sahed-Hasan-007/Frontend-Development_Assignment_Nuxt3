@@ -4,7 +4,7 @@
 
     <div>
         <header>
-            <App_header/>
+            <appHeader/>
         </header>
 
         <div>
@@ -12,7 +12,7 @@
         </div>
         
         <footer>
-            <App_footer/>
+            <appFooter/>
         </footer>
 
     </div>

@@ -80,6 +80,8 @@
 </template>
 
 <script setup>
+
+
 import { useCartStore } from "../stores/cart";
 
 const cartStore = useCartStore();

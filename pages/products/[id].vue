@@ -8,7 +8,7 @@
           <div class="flex flex-col gap-4">
             <div class="bg-white shadow p-2">
               <img
-                :src="product.image"
+                :src="item.image"
                 alt="Product"
                 class="w-full h-auto aspect-[11/8] object-cover object-center"
               />
@@ -19,7 +19,7 @@
         <div class="w-full">
           <div>
             <h3 class="text-lg sm:text-xl font-bold text-gray-800">
-              <p>{{ product?.title }}</p>
+              <p>{{ item?.title }}</p>
             </h3>
             <div class="flex items-center gap-3 mt-1">
               <div class="flex items-center gap-1">
@@ -75,17 +75,16 @@
                   />
                 </svg>
               </div>
-              
             </div>
             <div class="mt-2">
               <p class="text-gray-500 text-left mt-1 text-sm">
-                {{ product?.description }}
+                {{ item?.description }}
               </p>
             </div>
 
             <div class="flex items-center flex-wrap gap-2 mt-4">
               <h4 class="text-black text-2xl sm:text-3xl font-bold">
-                {{ product?.price }}$
+                {{ item?.price }}$
               </h4>
             </div>
 
@@ -102,22 +101,36 @@
             <div class="mt-4 flex flex-wrap gap-4">
               <button
                 type="button"
+                @click="handleAddToCart(item)"
                 class="px-4 py-3 w-[45%] border border-yellow-300 bg-black text-white hover:bg-[#d4fbc4] hover:text-black text-sm font-semibold"
               >
                 Add to cart
               </button>
               <button
                 type="button"
+                @click="handleAddToFavorite(item)"
                 class="px-4 py-3 w-[45%] border border-yellow-600 bg-black hover:bg-[#d4fbc4] text-white hover:text-black text-sm font-semibold"
               >
                 Add to favorite
               </button>
             </div>
+            <!-- Popup Message1 -->
+            <div
+              v-if="popupVisibleCart"
+              class="fixed top-1/2 right-5 transform -translate-y-1/2 bg-black text-white p-4 rounded shadow-lg transition-opacity duration-300"
+            >
+              Product added to cart!
+            </div>
+            <!-- Popup Message2 -->
+            <div
+              v-if="popupVisibleFavorite"
+              class="fixed top-1/2 right-5 transform -translate-y-1/2 bg-black text-white p-4 rounded shadow-lg transition-opacity duration-300"
+            >
+              Product added to Favorites!
+            </div>
           </div>
 
           <hr class="my-6 border-gray-300" />
-
-          
         </div>
       </div>
     </div>
@@ -125,18 +138,42 @@
 </template>
 
 <script setup>
+import { useCartStore } from "../stores/cart";
+import { useFavoriteStore } from "../stores/favorite";
+import { useProducts } from "../composables/useProducts";
+
+const cartStore = useCartStore();
+const favoriteStore = useFavoriteStore();
+const popupVisibleCart = ref(false);
+const popupVisibleFavorite = ref(false);
+
+// Fetch the product details
 const { id } = useRoute().params;
 const uri = `https://fakestoreapi.com/products/${id}`;
+const { data: item } = await useFetch(uri);
 
-//fatching the product
-const { data: product } = await useFetch(uri);
+// Add to Cart
+function handleAddToCart(item) {
+  cartStore.addToCart(item);
+  showPopupCard();
+}
+
+// Add to Favorite
+function handleAddToFavorite(item) {
+  favoriteStore.addToFavorite(item);
+  showPopupFavorite();
+}
+
+function showPopupCard() {
+  popupVisibleCart.value = true;
+  setTimeout(() => {
+    popupVisibleCart.value = false;
+  }, 2000);
+}
+function showPopupFavorite() {
+  popupVisibleFavorite.value = true;
+  setTimeout(() => {
+    popupVisibleFavorite.value = false;
+  }, 2000);
+}
 </script>
-
-<style scoped>
-div {
-  text-align: center;
-}
-.cc {
-  color: yellow;
-}
-</style>
