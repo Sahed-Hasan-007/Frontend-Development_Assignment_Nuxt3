@@ -12,9 +12,9 @@
     >
       <a href="/" class="flex-shrink-0">
         <img
-          src="../public/img/company_logo.png"
+          src="../public/img/landingLogo.png"
           alt="logo"
-          class="w-28 bg-customGreen sm:w-36"
+          class="w-28 bg-customGreen hover:scale-150 hover:shadow-2xl group-hover:shadow-green-200 sm:w-36 "
         />
       </a>
 
