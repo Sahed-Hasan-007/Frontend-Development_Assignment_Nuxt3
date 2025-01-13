@@ -3,7 +3,7 @@
     <section class="py-2 bg-gray-900 text-white text-right px-4 sm:px-10">
       <p class="text-sm">
         <strong class="mx-2 sm:mx-3">Address:</strong> Kuril, Dhaka
-        <strong class="mx-2 sm:mx-3">Contact No:</strong> 01733586288
+        <strong class="mx-2 sm:mx-3">Contact No:</strong> +880 01733586288
       </p>
     </section>
 
@@ -41,9 +41,9 @@
           <li>
             <NuxtLink
               to="/cart"
-              class="relative text-[#fcfbfb] bg-gray-900 hover:text-2xl hover:bg-[#d4fbc4] hover:text-black font-bold text-[15px] block px-4 py-2 rounded-lg transition-all duration-300 ease-in-out"
+              class="flex relative text-[#fcfbfb] bg-gray-900 hover:text-2xl hover:bg-[#d4fbc4] hover:text-black font-bold text-[15px] block px-4 py-2 rounded-lg transition-all duration-300 ease-in-out"
             >
-              Cart
+            <nuxt-icon class="mr-2 mt-1" name="cart2"></nuxt-icon> Cart
               <span
                 v-if="cartCount > 0"
                 class="absolute top-0 right-0 -mt-2 -mr-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
@@ -55,9 +55,9 @@
           <li>
             <NuxtLink
               to="/favorites"
-              class="relative text-[#fcfbfb] bg-gray-900 hover:text-2xl hover:bg-[#d4fbc4] hover:text-black font-bold text-[15px] block px-4 py-2 rounded-lg transition-all duration-300 ease-in-out"
+              class="flex relative text-[#fcfbfb] bg-gray-900 hover:text-2xl hover:bg-[#d4fbc4] hover:text-black font-bold text-[15px] block px-4 py-2 rounded-lg transition-all duration-300 ease-in-out"
             >
-              Favorite Products
+            <nuxt-icon class="mr-2 mt-1" name="favorite1"></nuxt-icon> Favorite Products
               <span
                 v-if="favoriteCount > 0"
                 class="absolute top-0 right-0 -mt-2 -mr-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"

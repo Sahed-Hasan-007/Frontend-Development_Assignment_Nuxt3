@@ -17,7 +17,7 @@
             <p class="text-gray-600 text-sm">{{ item.price }}$</p>
             <button
               @click="removeFromFavorite(item.id)"
-              class="mt-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+              class="mt-20 px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-current outline-none bg-black hover:bg-transparent text-white hover:text-black transition-all duration-300"
             >
               Remove
             </button>

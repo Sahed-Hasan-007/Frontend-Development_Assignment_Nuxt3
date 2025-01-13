@@ -26,22 +26,22 @@
               >
                 <img
                   src="https://readymadeui.com/google-logo.svg"
-                  class="w-28 mx-auto"
+                  class="w-28 mx-auto hover:scale-125"
                   alt="google-logo"
                 />
                 <img
                   src="https://readymadeui.com/facebook-logo.svg"
-                  class="w-28 mx-auto"
+                  class="w-28 mx-auto hover:scale-125"
                   alt="facebook-logo"
                 />
                 <img
                   src="https://readymadeui.com/linkedin-logo.svg"
-                  class="w-28 mx-auto"
+                  class="w-28 mx-auto hover:scale-125"
                   alt="linkedin-logo"
                 />
                 <img
                   src="https://readymadeui.com/pinterest-logo.svg"
-                  class="w-28 mx-auto"
+                  class="w-28 mx-auto hover:scale-125"
                   alt="pinterest-logo"
                 />
               </div>
