@@ -37,3 +37,16 @@
 <ol>
     <li><strong>Clone the repository</strong>:
         <pre><code>git clone &lt;repository-url&gt;
+<hr>
+
+<h2>Usage</h2>
+
+<h3>State Management with Pinia</h3>
+<p>The application uses Pinia for managing global state, including:</p>
+<ul>
+    <li><strong>Cart Management</strong>: Adding, updating, and removing items.</li>
+    <li><strong>Product Listing</strong>: Storing and filtering products.</li>
+</ul>
+
+<p>Example store (e.g., <code>stores/cartStore.ts</code>):</p>
+<pre><code>import { defineStore } from 'pinia';
